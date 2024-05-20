@@ -1384,6 +1384,11 @@ int I410ToAR30Matrix(const uint16_t* src_y,
     }
   }
 #endif
+#if defined(HAS_I410TOAR30ROW_SVE2)
+  if (TestCpuFlag(kCpuHasSVE2)) {
+    I410ToAR30Row = I410ToAR30Row_SVE2;
+  }
+#endif
 #if defined(HAS_I410TOAR30ROW_SSSE3)
   if (TestCpuFlag(kCpuHasSSSE3)) {
     I410ToAR30Row = I410ToAR30Row_Any_SSSE3;
@@ -6967,6 +6972,11 @@ static int I010ToAR30MatrixBilinear(const uint16_t* src_y,
     }
   }
 #endif
+#if defined(HAS_I410TOAR30ROW_SVE2)
+  if (TestCpuFlag(kCpuHasSVE2)) {
+    I410ToAR30Row = I410ToAR30Row_SVE2;
+  }
+#endif
 #if defined(HAS_I410TOAR30ROW_SSSE3)
   if (TestCpuFlag(kCpuHasSSSE3)) {
     I410ToAR30Row = I410ToAR30Row_Any_SSSE3;
@@ -7079,6 +7089,11 @@ static int I210ToAR30MatrixLinear(const uint16_t* src_y,
     if (IS_ALIGNED(width, 8)) {
       I410ToAR30Row = I410ToAR30Row_NEON;
     }
+  }
+#endif
+#if defined(HAS_I410TOAR30ROW_SVE2)
+  if (TestCpuFlag(kCpuHasSVE2)) {
+    I410ToAR30Row = I410ToAR30Row_SVE2;
   }
 #endif
 #if defined(HAS_I410TOAR30ROW_SSSE3)
