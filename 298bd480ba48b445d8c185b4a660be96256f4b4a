@@ -138,6 +138,23 @@
       "message": "Worth mentioning: \na) Clang is the only supported compiler for doing Chromium stuff (I\u0027m not aware of any other projects using GN and GCC). GCC is best-effort supported.\nb) If GCC doesn\u0027t support this flag, I think we (Arm) should add it, but GCC moves a lot more slowly than LLVM and old GCC versions stick around for a long time. I wonder if is_clang could work for us in this situation.",
       "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75094aae_140fca03",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2024-11-05T19:48:23Z",
+      "side": 1,
+      "message": "We should try not to use Xclang flags, even if we only support clang. They\u0027re not clang\u0027s \"stable API\", if you will.\n\nIs this really the only place where https://chromium-review.googlesource.com/c/chromium/src/+/5904093 collides with other target flags? I would\u0027ve expected that to be pretty common, since what libyuv does here seems like the \"normal\" approach for multiversioning a whole target at once.\n\nAnother idea could be to have a \"arm_base_arch\" variable in //build that we set to either \"armv8-a\" or \"armv8-a+lse\" and then pass `\"-march\u003d${arm_base_arch}+sme\"` (etc) here, and to pass \"-march\u003d${arm_base_arch}` globally in some config that we remove here? That should work with gcc too.",
+      "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
