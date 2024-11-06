@@ -190,6 +190,24 @@
       "parentUuid": "5d490a85_1b62ac9a",
       "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89bd57ac_2a7a3a43",
+        "filename": "BUILD.gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2024-11-06T19:32:51Z",
+      "side": 1,
+      "message": "`__attribute__`. `__attribute__(target())` seems to do the trick with both compilers:\n\n```\n$ cat test.cc\n#include \u003carm_acle.h\u003e\n\n__attribute__((target(\"+crc+nocrypto\")))\nuint32_t foo (uint32_t a, uint8_t b) {\n  return __crc32b(a, b);\n}\n\nint main() {\n  return foo(54, 8);\n}\n\n$ aarch64-linux-gnu-g++ test.cc -march\u003darmv8-a -S -o - | grep crc\n\t.arch armv8-a+crc\n\tcrc32b\tw0, w0, w1\n\n$ third_party/llvm-build/Release+Asserts/bin/clang++ --target\u003daarch64-linux-gnu test.cc -march\u003darmv8-a -S -o - | grep crc\n\tcrc32b\tw0, w8, w9\n```",
+      "parentUuid": "f40e6fc1_47a15fa9",
+      "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
