@@ -155,6 +155,23 @@
       "message": "We should try not to use Xclang flags, even if we only support clang. They\u0027re not clang\u0027s \"stable API\", if you will.\n\nIs this really the only place where https://chromium-review.googlesource.com/c/chromium/src/+/5904093 collides with other target flags? I would\u0027ve expected that to be pretty common, since what libyuv does here seems like the \"normal\" approach for multiversioning a whole target at once.\n\nAnother idea could be to have a \"arm_base_arch\" variable in //build that we set to either \"armv8-a\" or \"armv8-a+lse\" and then pass `\"-march\u003d${arm_base_arch}+sme\"` (etc) here, and to pass \"-march\u003d${arm_base_arch}` globally in some config that we remove here? That should work with gcc too.",
       "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d490a85_1b62ac9a",
+        "filename": "BUILD.gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2024-11-06T01:59:35Z",
+      "side": 1,
+      "message": "wtc pointed out that several of these targets have very few files and functions.\n\nAnother option then is to use `__attribute((target_version(\"sve\")))` in the source files on the functions, and not have a separate target with separate flags for these at all.\n\nThis used to not work great on arm, but with https://github.com/llvm/llvm-project/issues/56480 fixed this should be better.\n\nThis would have the advantage that we don\u0027t have to worry about ODR violations from inline functions in headers, too.\n\n(It\u0027d only help if libyuv is one of fairly few targets that do these per-target-feature optimizations. I\u0027d be a bit surprised if that\u0027s true. But if the attributes work, using them would be a nice change regardless of your specific project.)",
+      "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
