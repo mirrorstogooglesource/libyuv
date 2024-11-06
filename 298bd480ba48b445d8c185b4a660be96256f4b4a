@@ -172,6 +172,24 @@
       "message": "wtc pointed out that several of these targets have very few files and functions.\n\nAnother option then is to use `__attribute((target_version(\"sve\")))` in the source files on the functions, and not have a separate target with separate flags for these at all.\n\nThis used to not work great on arm, but with https://github.com/llvm/llvm-project/issues/56480 fixed this should be better.\n\nThis would have the advantage that we don\u0027t have to worry about ODR violations from inline functions in headers, too.\n\n(It\u0027d only help if libyuv is one of fairly few targets that do these per-target-feature optimizations. I\u0027d be a bit surprised if that\u0027s true. But if the attributes work, using them would be a nice change regardless of your specific project.)",
       "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f40e6fc1_47a15fa9",
+        "filename": "BUILD.gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1001562
+      },
+      "writtenOn": "2024-11-06T17:44:49Z",
+      "side": 1,
+      "message": "\u003e Another option then is to use `__attribute((target_version(\"sve\")))` in the source files on the functions, and not have a separate target with separate flags for these at all.\n\nDid you mean `__attribute` or `__attribute__`?\n\nThe `target_version` attribute doesn\u0027t seem to be supported by GCC:\nhttps://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html\nhttps://gcc.gnu.org/onlinedocs/gcc/AArch64-Function-Attributes.html\n\n\u003e (It\u0027d only help if libyuv is one of fairly few targets that do these per-target-feature optimizations. I\u0027d be a bit surprised if that\u0027s true. But if the attributes work, using them would be a nice change regardless of your specific project.)\n\nBoth libvpx and libaom also do these per-target-feature optimizations.\n\nhttps://source.chromium.org/chromium/chromium/src/+/main:third_party/libvpx/BUILD.gn;l\u003d354\n\nhttps://source.chromium.org/chromium/chromium/src/+/main:third_party/libaom/BUILD.gn;l\u003d249",
+      "parentUuid": "5d490a85_1b62ac9a",
+      "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
