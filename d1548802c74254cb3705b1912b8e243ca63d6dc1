@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f6d9d7f_1773b597",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115898
+      },
+      "writtenOn": "2024-11-07T18:52:33Z",
+      "side": 1,
+      "message": "nice one.  I hadnt noticed the direct conversion from short, which I\u0027ve always wanted from NEON.",
+      "revId": "d1548802c74254cb3705b1912b8e243ca63d6dc1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5876996a_7decad08",
+        "filename": "source/row_sve.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 1678,
+      "author": {
+        "id": 1115898
+      },
+      "writtenOn": "2024-11-07T18:52:33Z",
+      "side": 1,
+      "message": "feature request - make an fmul instruction that takes a float, multiplies by an int, and produces a float, so we dont need cvt.",
+      "revId": "d1548802c74254cb3705b1912b8e243ca63d6dc1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
