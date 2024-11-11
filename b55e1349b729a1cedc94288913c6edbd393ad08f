@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23300a50_a1d6368c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001562
+      },
+      "writtenOn": "2024-11-11T18:20:42Z",
+      "side": 1,
+      "message": "Hao: I suggest some formatting changes to CMakeLists.txt. Thanks!",
+      "revId": "b55e1349b729a1cedc94288913c6edbd393ad08f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dba5f3df_47e44775",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1001562
+      },
+      "writtenOn": "2024-11-11T18:20:42Z",
+      "side": 1,
+      "message": "Nit: The indentation level is this file is two spaces. Please indent this line with two spaces.",
+      "revId": "b55e1349b729a1cedc94288913c6edbd393ad08f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "880bb603_611c7155",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1001562
+      },
+      "writtenOn": "2024-11-11T18:20:42Z",
+      "side": 1,
+      "message": "Nit: Indent this line",
+      "revId": "b55e1349b729a1cedc94288913c6edbd393ad08f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "028781ed_b92f1d84",
+        "filename": "CMakeLists.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1001562
+      },
+      "writtenOn": "2024-11-11T18:20:42Z",
+      "side": 1,
+      "message": "Nit: The indentation level is this file is two spaces. Please re-indent lines 153-173 to use the same indentation level.",
+      "revId": "b55e1349b729a1cedc94288913c6edbd393ad08f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
