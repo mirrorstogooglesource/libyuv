@@ -208,6 +208,24 @@
       "parentUuid": "f40e6fc1_47a15fa9",
       "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "504633b8_75c43b6c",
+        "filename": "BUILD.gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1115898
+      },
+      "writtenOn": "2024-11-12T21:27:04Z",
+      "side": 1,
+      "message": "attribute are overridden by command line and march and become compile errors.\nAlso they only work with gcc/clang syntax compilers",
+      "parentUuid": "89bd57ac_2a7a3a43",
+      "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
