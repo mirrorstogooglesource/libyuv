@@ -226,6 +226,24 @@
       "parentUuid": "89bd57ac_2a7a3a43",
       "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98d6ff6f_b1cbc52f",
+        "filename": "BUILD.gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1001629
+      },
+      "writtenOn": "2024-11-12T23:28:12Z",
+      "side": 1,
+      "message": "\u003e Also they only work with gcc/clang syntax compilers\n\nThat\u0027s fine though, those are the only compilers we support.",
+      "parentUuid": "504633b8_75c43b6c",
+      "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
