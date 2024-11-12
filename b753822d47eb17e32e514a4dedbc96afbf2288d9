@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71695a6a_2d58c8bc",
+        "filename": "source/row_sve.cc",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1115898
+      },
+      "writtenOn": "2024-11-12T18:36:18Z",
+      "side": 1,
+      "message": "can this be achieved with unzip to free up a register?",
+      "revId": "b753822d47eb17e32e514a4dedbc96afbf2288d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
