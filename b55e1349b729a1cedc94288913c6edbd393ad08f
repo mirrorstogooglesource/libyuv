@@ -67,6 +67,41 @@
       "message": "Nit: The indentation level is this file is two spaces. Please re-indent lines 153-173 to use the same indentation level.",
       "revId": "b55e1349b729a1cedc94288913c6edbd393ad08f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4d368ae_d9b3d4a5",
+        "filename": "source/row_lasx.cc",
+        "patchSetId": 6
+      },
+      "lineNbr": 1162,
+      "author": {
+        "id": 1115898
+      },
+      "writtenOn": "2024-11-12T18:39:18Z",
+      "side": 1,
+      "message": "note that this method is not producing 255 when alpha and rgb are 255, so I may change it to a more accurate version in the future.",
+      "fixSuggestions": [
+        {
+          "fixId": "b5bf1272_38bad5bd",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "source/row_lasx.cc",
+              "range": {
+                "startLine": 1162,
+                "startChar": 0,
+                "endLine": 1162,
+                "endChar": 0
+              },
+              "replacement": "    // TODO(fbarchard): This is not producing 255 when alpha is 255.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "b55e1349b729a1cedc94288913c6edbd393ad08f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
