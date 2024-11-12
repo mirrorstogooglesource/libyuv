@@ -34,6 +34,24 @@
       ],
       "revId": "c085ba18326ab030fa7c078e6cc8af78f4090da6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae53290a_c789dce9",
+        "filename": "source/scale_sme.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1115898
+      },
+      "writtenOn": "2024-11-12T18:30:24Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "2c1cb96b_1c9b20f3",
+      "revId": "c085ba18326ab030fa7c078e6cc8af78f4090da6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
