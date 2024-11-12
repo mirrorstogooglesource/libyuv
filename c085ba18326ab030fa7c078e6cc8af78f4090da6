@@ -52,6 +52,24 @@
       "parentUuid": "2c1cb96b_1c9b20f3",
       "revId": "c085ba18326ab030fa7c078e6cc8af78f4090da6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2320ce9_f91ba6e5",
+        "filename": "source/scale_sme.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1571352
+      },
+      "writtenOn": "2024-11-12T19:55:13Z",
+      "side": 1,
+      "message": "Good point, will investigate and put up a new patch if the ADALP version is preferred.",
+      "parentUuid": "ae53290a_c789dce9",
+      "revId": "c085ba18326ab030fa7c078e6cc8af78f4090da6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
