@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c1cb96b_1c9b20f3",
+        "filename": "source/scale_sme.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1115898
+      },
+      "writtenOn": "2024-11-12T18:26:27Z",
+      "side": 1,
+      "message": "theres no adalp in sve?",
+      "fixSuggestions": [
+        {
+          "fixId": "92b723d1_573773c7",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "source/scale_sme.cc",
+              "range": {
+                "startLine": 236,
+                "startChar": 0,
+                "endLine": 240,
+                "endChar": 0
+              },
+              "replacement": "  \"uaddlp   z4.h, z0.b, z1.b                             \\n\" \\\n  \"uaddlp   z5.h, z0.b, z1.b                             \\n\" \\\n  \"uaddlp   z6.h, z2.b, z3.b                             \\n\" \\\n  \"uaddlp   z7.h, z2.b, z3.b                             \\n\" \\\n"
+            }
+          ]
+        }
+      ],
+      "revId": "c085ba18326ab030fa7c078e6cc8af78f4090da6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
