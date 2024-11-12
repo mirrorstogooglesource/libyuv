@@ -102,6 +102,24 @@
       ],
       "revId": "b55e1349b729a1cedc94288913c6edbd393ad08f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a46da8d9_716ffec9",
+        "filename": "source/row_lasx.cc",
+        "patchSetId": 6
+      },
+      "lineNbr": 1162,
+      "author": {
+        "id": 1001562
+      },
+      "writtenOn": "2024-11-12T22:22:46Z",
+      "side": 1,
+      "message": "Should we fix this bug before submitting this CL?",
+      "parentUuid": "a4d368ae_d9b3d4a5",
+      "revId": "b55e1349b729a1cedc94288913c6edbd393ad08f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
