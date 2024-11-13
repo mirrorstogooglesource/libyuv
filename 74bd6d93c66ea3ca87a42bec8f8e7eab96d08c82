@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72a2595f_cf0e4dc2",
+        "filename": "CM_linux_packages.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1001562
+      },
+      "writtenOn": "2024-11-13T18:28:21Z",
+      "side": 1,
+      "message": "The `-E` option is portable:\nhttps://pubs.opengroup.org/onlinepubs/9799919799/utilities/grep.html\n\nThe `-o` (`--only-matching`) option is not in the above webpage, but I found it in the `grep` help messages on both Linux and macOS.",
+      "revId": "74bd6d93c66ea3ca87a42bec8f8e7eab96d08c82",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19b28da0_a4500875",
+        "filename": "CM_linux_packages.cmake",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1001562
+      },
+      "writtenOn": "2024-11-13T18:28:21Z",
+      "side": 0,
+      "message": "The `--perl-regex` option is spelled `--perl-regexp` in the `grep` help message on Linux:\n\n```\nPattern selection and interpretation:\n  -E, --extended-regexp     PATTERNS are extended regular expressions\n  -F, --fixed-strings       PATTERNS are strings\n  -G, --basic-regexp        PATTERNS are basic regular expressions\n  -P, --perl-regexp         PATTERNS are Perl regular expressions\n  -e, --regexp\u003dPATTERNS     use PATTERNS for matching\n```\n\nPerhaps `grep` allows a long option to be incomplete as long as there is no ambiguity?",
+      "revId": "5b906a0ec8223329bdbd644ac2cb50224e2c0288",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
