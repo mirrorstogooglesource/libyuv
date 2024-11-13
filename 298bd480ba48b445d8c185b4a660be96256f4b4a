@@ -262,6 +262,24 @@
       "parentUuid": "98d6ff6f_b1cbc52f",
       "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f538ab58_b062bd5d",
+        "filename": "BUILD.gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1177474
+      },
+      "writtenOn": "2024-11-13T14:25:15Z",
+      "side": 1,
+      "message": "The only other compiler that could be relevant is MSVC, but MSVC does not support inline assembly at all for Arm[1].\n\n[1] https://learn.microsoft.com/en-us/cpp/assembler/inline/writing-functions-with-inline-assembly?view\u003dmsvc-170",
+      "parentUuid": "95e580ce_76f88f82",
+      "revId": "298bd480ba48b445d8c185b4a660be96256f4b4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
