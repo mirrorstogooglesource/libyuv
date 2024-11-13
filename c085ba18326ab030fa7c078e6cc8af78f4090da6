@@ -70,6 +70,24 @@
       "parentUuid": "ae53290a_c789dce9",
       "revId": "c085ba18326ab030fa7c078e6cc8af78f4090da6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f8ea7a0_0163deb9",
+        "filename": "source/scale_sme.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1571352
+      },
+      "writtenOn": "2024-11-13T13:29:03Z",
+      "side": 1,
+      "message": "Correction: this doesn\u0027t work since we are de-interleaving uv pairs (.h) not bytes. Trying to use a pairwise widening add here would operate within a uv pair rather than across consecutive pairs like we want. We could use ld2 on bytes (.h) instead of 16-bit (.h) elements but this would not make the code any shorter, so will leave as-is.",
+      "parentUuid": "d2320ce9_f91ba6e5",
+      "revId": "c085ba18326ab030fa7c078e6cc8af78f4090da6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
