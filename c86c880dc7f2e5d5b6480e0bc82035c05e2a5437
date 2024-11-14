@@ -1,0 +1,49 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b8ac751_e23c3896",
+        "filename": "source/row_sve.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1115898
+      },
+      "writtenOn": "2024-11-14T16:52:09Z",
+      "side": 1,
+      "message": "if the values are less than 1 this will clamp to 1023?  If I recall thats how the other versions work as well.",
+      "fixSuggestions": [
+        {
+          "fixId": "ad6a4f07_d57e7273",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "source/row_sve.cc",
+              "range": {
+                "startLine": 229,
+                "startChar": 0,
+                "endLine": 229,
+                "endChar": 0
+              },
+              "replacement": "  \"umin     z16.h, p0/m, z16.h, z23.h         \\n\" /* 00bbbbbbbbbxxxx */ \\\n  \"orr      z16.h, z16.h, #0x4000             \\n\" /* 10bbbbbbbbbxxxx */ \\\n  \"sri      z16.h, z17.h, #12                 \\n\" /* 10bbbbbbbbbgggg */ \\\n  \"lsl      z17.h, z17.h, #4                  \\n\" /* ggggggxxxxxx0000 */ \\\n  \"sri      z17.h, z16.h, #6                  \\n\" /* ggggggbbbbbbbbbb */ \\\n  \"st2h     {z17.h, z18.h}, p1, [%[dst_ar30]] \\n\"                        \\\n  \"incb     %[dst_ar30], all, mul #2          \\n\"\n\n#define STOREAR30_SVE_CLAMP                                               \\\n"
+            },
+            {
+              "path": "source/row_sve.cc",
+              "range": {
+                "startLine": 238,
+                "startChar": 0,
+                "endLine": 238,
+                "endChar": 0
+              },
+              "replacement": "\nvoid I444ToARGBRow_SVE2_Clamp(const uint8_t* src_y,\n                        const uint8_t* src_u,\n                        const uint8_t* src_v,\n                        uint8_t* dst_argb,\n                        const struct YuvConstants* yuvconstants,\n                        int width) {\n  uint64_t vl;\n  asm volatile (\n      \"cnth     %[vl]                                   \\n\"\n      \"ptrue    p0.b                                    \\n\" YUVTORGB_SVE_SETUP\n      \"dup      z19.b, #255                             \\n\" /* A */\n      \"subs     %w[width], %w[width], %w[vl]            \\n\"\n      \"b.lt     2f                                      \\n\"\n\n      // Run bulk of computation with an all-true predicate to avoid predicate\n      // generation overhead.\n      \"ptrue    p1.h                                    \\n\"\n      \"1:                                               \\n\" READYUV444_SVE\n          I4XXTORGB_SVE RGBTOARGB8_SVE_CLAMP\n      \"subs     %w[width], %w[width], %w[vl]            \\n\"\n      \"st2h     {z16.h, z17.h}, p1, [%[dst_argb]]       \\n\"\n      \"add      %[dst_argb], %[dst_argb], %[vl], lsl #2 \\n\"\n      \"b.ge     1b                                      \\n\"\n\n      \"2:                                               \\n\"\n      \"adds     %w[width], %w[width], %w[vl]            \\n\"\n      \"b.eq     99f                                     \\n\"\n\n      // Calculate a predicate for the final iteration to deal with the tail.\n      \"whilelt  p1.h, wzr, %w[width]                    \\n\" READYUV444_SVE\n          I4XXTORGB_SVE RGBTOARGB8_SVE_CLAMP\n      \"st2h     {z16.h, z17.h}, p1, [%[dst_argb]]       \\n\"\n\n      \"99:                                              \\n\"\n      : [src_y] \"+r\"(src_y),                               // %[src_y]\n        [src_u] \"+r\"(src_u),                               // %[src_u]\n        [src_v] \"+r\"(src_v),                               // %[src_v]\n        [dst_argb] \"+r\"(dst_argb),                         // %[dst_argb]\n        [width] \"+r\"(width),                               // %[width]\n        [vl] \"\u003d\u0026r\"(vl)                                     // %[vl]\n      : [kUVCoeff] \"r\"(\u0026yuvconstants-\u003ekUVCoeff),           // %[kUVCoeff]\n        [kRGBCoeffBias] \"r\"(\u0026yuvconstants-\u003ekRGBCoeffBias)  // %[kRGBCoeffBias]\n      : \"cc\", \"memory\", YUVTORGB_SVE_REGS);\n}\n"
+            }
+          ]
+        }
+      ],
+      "revId": "c86c880dc7f2e5d5b6480e0bc82035c05e2a5437",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
