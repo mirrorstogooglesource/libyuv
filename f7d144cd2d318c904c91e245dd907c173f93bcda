@@ -34,6 +34,24 @@
       ],
       "revId": "f7d144cd2d318c904c91e245dd907c173f93bcda",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ceba3be3_ccdda6c2",
+        "filename": "source/row_sve.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1571352
+      },
+      "writtenOn": "2024-11-14T16:41:56Z",
+      "side": 1,
+      "message": "correct, the odd 16-bit lanes will be set to zero, a.k.a.\n\nz1.h \u003d [aa,00,bb,00,cc,00,dd,00,...]\n\nwe then duplicate the components into the gaps with the trn1 below to deal with the subsampling:\n\n(after trn1 z1.h, z1.h, z1.h)\nz1.h \u003d [aa,aa,bb,bb,cc,cc,dd,dd,...]",
+      "parentUuid": "8b9dd421_c9c57f1f",
+      "revId": "f7d144cd2d318c904c91e245dd907c173f93bcda",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
