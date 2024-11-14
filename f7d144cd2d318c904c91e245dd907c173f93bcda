@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b9dd421_c9c57f1f",
+        "filename": "source/row_sve.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1115898
+      },
+      "writtenOn": "2024-11-14T16:36:25Z",
+      "side": 1,
+      "message": "To be clear, this reads half a register, due to .s fooling the predicate?",
+      "fixSuggestions": [
+        {
+          "fixId": "f1392256_f50d7c92",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "source/row_sve.cc",
+              "range": {
+                "startLine": 85,
+                "startChar": 0,
+                "endLine": 87,
+                "endChar": 0
+              },
+              "replacement": "  \"ld1b       {z1.s}, p1/z, [%[src_u]]       \\n\" \\\n  \"ld1b       {z2.s}, p1/z, [%[src_v]]       \\n\" \\\n"
+            }
+          ]
+        }
+      ],
+      "revId": "f7d144cd2d318c904c91e245dd907c173f93bcda",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
