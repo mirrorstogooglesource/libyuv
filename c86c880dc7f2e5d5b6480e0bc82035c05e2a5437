@@ -44,6 +44,24 @@
       ],
       "revId": "c86c880dc7f2e5d5b6480e0bc82035c05e2a5437",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6439653_7568c02c",
+        "filename": "source/row_sve.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1571352
+      },
+      "writtenOn": "2024-11-14T16:55:53Z",
+      "side": 1,
+      "message": "as in negative numbers? the `u` here means unsigned so they will be treated as large positive numbers and clamped to 1023 (\u003c\u003c6 because we need it at the top of the lane for the clamp and so we can use sri later to insert the top bits)",
+      "parentUuid": "5b8ac751_e23c3896",
+      "revId": "c86c880dc7f2e5d5b6480e0bc82035c05e2a5437",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
